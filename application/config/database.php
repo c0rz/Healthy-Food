@@ -72,13 +72,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
-
+require_once('mainconfig.php');
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'db_webpro',
-	'password' => 'password',
-	'database' => 'db_webpro',
+	'username' => $config['mysql_username'],
+	'password' => $config['mysql_password'],
+	'database' => $config['mysql_database'],
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
