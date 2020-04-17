@@ -35,7 +35,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </li>
           </ul>
           <div class="navbar-form navbar-left">
-            <button type="button" class="btn btn-success navbar-btn">Masuk</button>
+            <a href="<?= base_url() ?>login"?><button type="button" class="btn btn-outline-info text-white">Masuk</button></a>
           </div>
         </div>
       </div>
@@ -148,12 +148,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
       <hr class="featurette-divider">
 
-      <!-- /END THE FEATURETTES -->
-
-    </div><!-- /.container -->
+    </div>
 
 
-    <!-- FOOTER -->
     <footer class="container">
       <p class="float-right"><a href="#">Back to top</a></p>
       <p>&copy; 2020 <?= $list_config["title"] ?></p>
