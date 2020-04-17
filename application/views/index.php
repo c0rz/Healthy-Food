@@ -114,8 +114,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <hr class="featurette-divider">
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Rekomendasi makanan sehat <span class="text-muted">untukmu</span></h2>
+          <p class="lead">Kami merekomendasikan makanan sehat dan tepat berdasarkan kondisi kesehatan kamu saat ini. Masukan keluhanmu kami rekomendasikan makanan sehat untukmu.</p>
         </div>
         <div class="col-md-5">
         <img class="featurette-image img-fluid mx-auto" src="<?= base_url($list_config['base_images']) ?>/doc2.jpg" alt="Generic placeholder image">
@@ -126,8 +126,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Tips kesehatan <span class="text-muted">untukmu</span></h2>
+          <p class="lead">Kami menyediakan berbagai artikel kesehatan yang bisa kamu coba. Terapkan tips kami untuk mendapatkan hidup sehat impian semua orang. </p>
         </div>
         <div class="col-md-5 order-md-1">
           <img class="featurette-image img-fluid mx-auto" src="<?= base_url($list_config['base_images']) ?>/doc1.jpg" alt="Generic placeholder image">
@@ -138,8 +138,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Konsultasi bersama <span class="text-muted">kami</span></h2>
+          <p class="lead">Sampaikan keluhan kesehatan diri kamu disini. Dokter kami akan berikan solusi untuk masalah kesehatanmu.</p>
         </div>
         <div class="col-md-5">
         <img class="featurette-image img-fluid mx-auto" src="<?= base_url($list_config['base_images']) ?>/doc3.jpg" alt="Generic placeholder image">
