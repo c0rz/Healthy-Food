@@ -17,18 +17,24 @@ class Login extends CI_Controller
 		$this->load->helper('form');
 		$data['list_config'] = $this->config->config;
 		if ($this->input->method() == 'post') {
-			$email = $this->post('email');
-			$password = $this->post('password');
-			if (!empty($email) && !empty($password)) {
+			$email = $this->input->post('email_address');
+			$password = $this->input->post('password');
+			if ($email && $password) {
 				$con['returnType'] = 'single';
 				$con['conditions'] = array(
 					'email' => $email,
 					'password' => md5($password)
 				);
 				$user = $this->user->getData($con);
-				$this->load->view('index', $data);
+				if ($user) {
+					$data['error_message'] = "sukses";
+					$this->load->view('masuk', $data);
+				} else {
+					$data['error_message'] = md5($password);
+					$this->load->view('masuk', $data);
+				}
 			} else {
-				$data['error_message'] = 'Email dan Password belum terisi.';
+				$data['error_message'] = md5($password);
 				$this->load->view('masuk', $data);
 			}
 		} else if ($this->session->userdata('credentials'))
