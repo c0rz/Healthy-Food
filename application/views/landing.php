@@ -61,9 +61,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <img class="first-slide" style="background-color: #8d3faa;">
           <div class="container">
             <div class="carousel-caption text-left">
-              <h1>With a Touch of <span style="color:blue; font-weight:bold;">Kindness.</span></h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <h1>Kesehatan adalah Investasi<span style="color:blue; font-weight:bold;"></span></h1>
+              <p>Hidup yang sehat dapat membuat kehidupan yang menyenangkan. Energi positif akan hadir bila kamu melakukan pola hidup sehat mulai dari sekarang.</p>
+             <!--  <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
             </div>
           </div>
         </div>
@@ -71,9 +71,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <img class="second-slide" style="background-color: #3f3faa;">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <h1>Lingkungan Sehat adalah Kunci</h1>
+              <p>Temukan lingkungan yang mendukung untuk menunjang semangat pada diri kita untuk melakukan pola hidup sehat juga. </p><!-- 
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
             </div>
           </div>
         </div>
@@ -81,9 +81,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <img class="third-slide" style="background-color: #c24531;">
           <div class="container">
             <div class="carousel-caption text-right">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <h1>Makanan Sehat Itu Penting  </h1>
+              <p>Imbangi pola hidup sehatmu dengan asupan makanan yang sehat agar pola hidupmu seimbang dan optimal</p>
+              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
             </div>
           </div>
         </div>
