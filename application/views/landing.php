@@ -158,12 +158,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
     <footer class="container">
-      <p class="float-right"><a href="#">Back to top</a></p>
+      <p class="float-right"><a onclick="gotoTop()" href="#">Back to top</a></p>
       <p>&copy; 2020 <?= $list_config["title"] ?></p>
     </footer>
   </main>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    function gotoTop() {
+      $("html, body").animate({
+        scrollTop: "0"
+      });
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script>
     window.jQuery || document.write('<script src="<?= base_url(); ?>assets/js/vendor/jquery-slim.min.js"><\/script>')
   </script>
