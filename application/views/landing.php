@@ -22,7 +22,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #00b3b3;">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #00b300;">
       <div class="container">
         <a class="navbar-brand" href="#"><i class="fas fa-hospital"></i> <?= $list_config['title'] ?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
