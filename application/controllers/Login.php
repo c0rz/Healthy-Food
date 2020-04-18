@@ -30,7 +30,7 @@ class Login extends CI_Controller
 					if ($user) {
 						$data['sukses_message'] = "Selamat datang, anda berhasil masuk kedalam website.";
 						$this->load->view('auth/masuk', $data);
-						$this->session->set_userdata('credentials', array('device_id' => $rows->device_id, 'useragent' => $rows->useragent, 'user_id' => $procc->logged_in_user->pk, 'cookie' => $cookie));
+						$this->session->set_userdata('credentials', $user);
 					} else {
 						$data['error_message'] = "Data Akun tidak ditemukan atau salah.";
 						$this->load->view('auth/masuk', $data);

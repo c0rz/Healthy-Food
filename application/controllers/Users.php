@@ -16,7 +16,13 @@ class Users extends CI_Controller
 		if (!$this->session->userdata('credentials')) :
 			$this->load->view('landing', $data);
 		else :
-			$this->load->view('login', $data);
+			$data['user_data'] = $this->session->userdata('credentials');
+			$this->load->view('home', $data);
 		endif;
+	}
+	
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url());
 	}
 }

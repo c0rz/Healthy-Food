@@ -67,7 +67,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <div class="form-group row">
                 <div class="alert alert-success col-md-12" role="alert">
                   <?= $sukses_message ?>
-                  <meta http-equiv="refresh" content="5;url=<?= base_url(); ?>" />
+                  <meta http-equiv="refresh" content="3;url=<?= base_url(); ?>" />
                 </div>
               </div>
             <?php } ?>

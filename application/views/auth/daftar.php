@@ -56,7 +56,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <div class="card">
                         <div class="card-header">Daftar</div>
                         <div class="card-body">
-                            <form action="<?= base_url('login') ?>" method="post" autocomplete="off">
+                            <form action="<?= base_url('register') ?>" method="post" autocomplete="off">
                                 <?php if (isset($error_message)) { ?>
                                     <div class="form-group row">
                                         <div class="alert alert-danger col-md-12" role="alert">
@@ -67,14 +67,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <div class="form-group row">
                                         <div class="alert alert-success col-md-12" role="alert">
                                             <?= $sukses_message ?>
-                                            <meta http-equiv="refresh" content="5;url=<?= base_url(); ?>" />
                                         </div>
                                     </div>
                                 <?php } ?>
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control" name="email_address" id="email" required autofocus>
+                                        <input type="email" class="form-control" name="email" id="email" required autofocus>
                                     </div>
                                 </div>
 
@@ -86,23 +85,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Konfirmasi Password</label>
+                                    <label for="password2" class="col-md-4 col-form-label text-md-right">Konfirmasi Password</label>
                                     <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password" id="password" required>
+                                        <input type="password" class="form-control" name="password2" id="password2" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Nama Lengkap</label>
+                                    <label for="nama" class="col-md-4 col-form-label text-md-right">Nama Lengkap</label>
                                     <div class="col-md-6">
-                                        <input type="password" class="form-control" name="password" id="password" required>
+                                        <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Tanggal Lahir</label>
+                                    <label for="ttl" class="col-md-4 col-form-label text-md-right">Tanggal Lahir</label>
                                     <div class="col-md-6">
-                                        <input type="date" class="form-control" name="password" id="password" required>
+                                        <input type="date" class="form-control" name="ttl" id="ttl" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 offset-md-4">

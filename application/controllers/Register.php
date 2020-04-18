@@ -18,29 +18,45 @@ class Register extends CI_Controller
 		$data['list_config'] = $this->config->config;
 		if (!$this->session->userdata('credentials')) :
 			if ($this->input->method() == 'post') {
-				$email = $this->input->post('email_address');
+				$email = $this->input->post('email');
 				$password = $this->input->post('password');
-				$cek_password = $this->input->post('password');
-				$nama_lengkap = $this->input->post('password');
-				$tanggal_lahir = $this->input->post('password');
+				$cek_password = $this->input->post('password2');
+				$nama_lengkap = $this->input->post('nama_lengkap');
+				$tanggal_lahir = $this->input->post('ttl');
 				if ($email && $password && $cek_password && $nama_lengkap && $tanggal_lahir) {
-					$con['returnType'] = 'single';
-					$con['conditions'] = array(
-						'email' => $email,
-						'password' => md5($password)
-					);
-					$user = $this->user->getData($con);
-					if ($user) {
-						$data['sukses_message'] = "Selamat datang, anda berhasil masuk kedalam website.";
-						$this->load->view('masuk', $data);
-						$this->session->set_userdata('credentials', array('device_id' => $rows->device_id, 'useragent' => $rows->useragent, 'user_id' => $procc->logged_in_user->pk, 'cookie' => $cookie));
+					if ($password == $cek_password) {
+						$con['returnType'] = 'count';
+						$con['conditions'] = array(
+							'email' => $email
+						);
+						$user = $this->user->getData($con);
+						if ($user > 0) {
+							$data['error_message'] = "Email sudah terdaftar.";
+							$this->load->view('auth/daftar', $data);
+						} else {
+							$userData = array(
+								'nama_lengkap' => $nama_lengkap,
+								'tanggal_lahir' => $tanggal_lahir,
+								'email' => $email,
+								'password' => md5($password),
+								'level' => 'Member',
+							);
+							$insert = $this->user->insert($userData);
+							if ($insert) {
+								$data['sukses_message'] = "Berhasil membuat akun, sekarang anda bisa Login/Masuk.";
+								$this->load->view('auth/daftar', $data);
+							} else {
+								$data['error_message'] = "Terdapat masalah pada bagian penambahan database (1).";
+								$this->load->view('auth/daftar', $data);
+							}
+						}
 					} else {
-						$data['error_message'] = "Data Akun tidak ditemukan atau salah.";
-						$this->load->view('masuk', $data);
+						$data['error_message'] = "Konfirmasi password tidak sesuai dengan password.";
+						$this->load->view('auth/daftar', $data);
 					}
 				} else {
 					$data['error_message'] = "Terdapat data yang kosong.";
-					$this->load->view('masuk', $data);
+					$this->load->view('auth/daftar', $data);
 				}
 			} else if ($this->session->userdata('credentials'))
 				redirect(base_url());
