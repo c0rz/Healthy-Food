@@ -14,7 +14,7 @@ class Users extends CI_Controller
 	{
 		$data['list_config'] = $this->config->config;
 		if (!$this->session->userdata('credentials')) :
-			$this->load->view('home', $data);
+			$this->load->view('landing', $data);
 		else :
 			$this->load->view('login', $data);
 		endif;

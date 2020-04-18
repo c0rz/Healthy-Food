@@ -15,16 +15,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link rel="stylesheet" href="<?= base_url($list_config['base_css']) ?>/fontawesome/css/all.min.css">
   <link href="<?= base_url($list_config['base_css']) ?>/bootstrap.min.css" rel="stylesheet">
   <link href="<?= base_url($list_config['base_css']) ?>/slider.css" rel="stylesheet">
-  <link href="<?= base_url($list_config['base_css']) ?>/slider.css" rel="stylesheet">
   <link href="<?= base_url($list_config['base_css']) ?>/coursel.css" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #00b300;">
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#"><i class="fas fa-hospital"></i> <?= $list_config['title'] ?></a>
+        <a class="navbar-brand" href="<?= base_url() ?>"><i class="fas fa-hospital"></i> <?= $list_config['title'] ?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,7 +34,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </li>
           </ul>
           <div class="navbar-form navbar-left">
-            <a href="<?= base_url() ?>login"?><button type="button" class="btn btn-outline-info text-white">Masuk</button></a>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url('login') ?>">Masuk</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url('register') ?>">Daftar</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -118,7 +124,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <p class="lead">Kami merekomendasikan makanan sehat dan tepat berdasarkan kondisi kesehatan kamu saat ini. Masukan keluhanmu kami rekomendasikan makanan sehat untukmu.</p>
         </div>
         <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" src="<?= base_url($list_config['base_images']) ?>/doc2.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-fluid mx-auto" src="<?= base_url($list_config['base_images']) ?>/doc2.jpg" alt="Generic placeholder image">
         </div>
       </div>
 
@@ -142,7 +148,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <p class="lead">Sampaikan keluhan kesehatan diri kamu disini. Dokter kami akan berikan solusi untuk masalah kesehatanmu.</p>
         </div>
         <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" src="<?= base_url($list_config['base_images']) ?>/doc3.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-fluid mx-auto" src="<?= base_url($list_config['base_images']) ?>/doc3.jpg" alt="Generic placeholder image">
         </div>
       </div>
 

@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 set_time_limit(0);
 ignore_user_abort(1);
-class Login extends CI_Controller
+class Register extends CI_Controller
 {
 	public function __construct()
 	{
@@ -20,7 +20,10 @@ class Login extends CI_Controller
 			if ($this->input->method() == 'post') {
 				$email = $this->input->post('email_address');
 				$password = $this->input->post('password');
-				if ($email && $password) {
+				$cek_password = $this->input->post('password');
+				$nama_lengkap = $this->input->post('password');
+				$tanggal_lahir = $this->input->post('password');
+				if ($email && $password && $cek_password && $nama_lengkap && $tanggal_lahir) {
 					$con['returnType'] = 'single';
 					$con['conditions'] = array(
 						'email' => $email,
@@ -29,20 +32,20 @@ class Login extends CI_Controller
 					$user = $this->user->getData($con);
 					if ($user) {
 						$data['sukses_message'] = "Selamat datang, anda berhasil masuk kedalam website.";
-						$this->load->view('auth/masuk', $data);
+						$this->load->view('masuk', $data);
 						$this->session->set_userdata('credentials', array('device_id' => $rows->device_id, 'useragent' => $rows->useragent, 'user_id' => $procc->logged_in_user->pk, 'cookie' => $cookie));
 					} else {
 						$data['error_message'] = "Data Akun tidak ditemukan atau salah.";
-						$this->load->view('auth/masuk', $data);
+						$this->load->view('masuk', $data);
 					}
 				} else {
-					$data['error_message'] = md5($password);
-					$this->load->view('auth/masuk', $data);
+					$data['error_message'] = "Terdapat data yang kosong.";
+					$this->load->view('masuk', $data);
 				}
 			} else if ($this->session->userdata('credentials'))
 				redirect(base_url());
 			else
-				$this->load->view('auth/masuk', $data);
+				$this->load->view('auth/daftar', $data);
 		else :
 			redirect(base_url());
 		endif;
