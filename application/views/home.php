@@ -25,7 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading"><i class="fas fa-hospital"></i> <?= $list_config['title'] ?></div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light dropdown-toggle">Dashboard</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
@@ -38,95 +38,75 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">MENU</button>
-
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
-
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
+      <nav class="nav-fixed navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <span class="navbar-toggler-icon" id="menu-toggle"></span>
       </nav>
 
       <div class="container-fluid">
-      <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-      </div>
-      <!-- /#page-content-wrapper -->
+        <div id="layoutSidenav_content">
+          <main>
+            <div class="container-fluid">
+              <h1 class="mt-4">Dashboard</h1>
+              <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Dashboard</li>
+              </ol>
+              <div class="row">
+                <div class="col-xl-3 col-md-6">
+                  <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Primary Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                      <a class="small text-white stretched-link" href="#">View Details</a>
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">Warning Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                      <a class="small text-white stretched-link" href="#">View Details</a>
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="card bg-success text-white mb-4">
+                    <div class="card-body">Success Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                      <a class="small text-white stretched-link" href="#">View Details</a>
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                  <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">Danger Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                      <a class="small text-white stretched-link" href="#">View Details</a>
+                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /#page-content-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="<?= base_url(); ?>assets/js/vendor/popper.min.js"></script>
-    <script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
-    <script src="<?= base_url(); ?>assets/js/vendor/holder.min.js"></script>
-    <script>
-      $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-      });
-    </script>
+        </div>
+        <!-- /#wrapper -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="<?= base_url(); ?>assets/js/vendor/popper.min.js"></script>
+        <script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
+        <script src="<?= base_url(); ?>assets/js/vendor/holder.min.js"></script>
+        <script>
+          $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+          });
+          $("#turun").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+          });
+        </script>
 </body>
 
 </html>

@@ -20,6 +20,11 @@ class Users extends CI_Controller
 			$this->load->view('home', $data);
 		endif;
 	}
+
+	public function update()
+	{
+		
+	}
 	
 	public function logout(){
 		$this->session->sess_destroy();

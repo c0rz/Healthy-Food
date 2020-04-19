@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Kesehatan adalah jalan ninja ku.">
+  <meta name="author" content="Kelompok Webpro">
+  <link rel="icon" href="<?= base_url($list_config['base_images']) ?>/icon.png">
+
+  <title><?= $list_config['title'] ?></title>
+  <link rel="stylesheet" href="<?= base_url($list_config['base_css']) ?>/fontawesome/css/all.min.css">
+  <link href="<?= base_url($list_config['base_css']) ?>/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= base_url($list_config['base_css']) ?>/slider.css" rel="stylesheet">
+  <link href="<?= base_url($list_config['base_css']) ?>/coursel.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="<?= base_url() ?>"><i class="fas fa-hospital"></i> <?= $list_config['title'] ?></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="<?= base_url() ?>">Halaman Utama</a>
+            </li>
+          </ul>
+          <div class="navbar-form navbar-left">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url('login') ?>">Masuk</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url('register') ?>">Daftar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
