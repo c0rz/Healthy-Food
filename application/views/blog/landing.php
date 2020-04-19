@@ -26,7 +26,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <hr class="my-5">
         <section class="text-center">
             <div class="row mb-4 wow fadeIn">
-                <?php foreach ($demo_berita as $r) { ?>
+                <?php foreach ($demo_berita as $r) {
+                    $preview = substr($r['isi_blog'], 0, 100) . '...'; ?>
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="view overlay">
@@ -34,24 +35,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title"><?=$r['judul']?></h4>
-                                <p class="card-text">KOSONGIN BIARIN AJA ENTR GUE EDIT</p>
+                                <p class="card-text"><?=$preview?></p>
                                 <a href="<?=$r['judul']?>" target="_blank" class="btn btn-primary btn-md">
                                 <i class="fas fa-book ml-2"></i> Baca selengkapnya
                                 </a>
                             </div>
                         </div>
-                        <!--/.Card-->
                     </div>
                 <?php } ?>
 
             </div>
-            <!--Grid row-->
-
-            <!--Pagination-->
             <nav class="d-flex justify-content-center wow fadeIn">
                 <ul class="pagination pg-blue">
-
-                    <!--Arrow left-->
                     <li class="page-item disabled">
                         <a class="page-link" href="#" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
@@ -85,17 +80,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </li>
                 </ul>
             </nav>
-            <!--Pagination-->
-
         </section>
-        <!--Section: Cards-->
-
     </div>
 </main>
-<!--Main layout-->
-
-<!--Footer-->
-
 
 <footer class="container">
     <p class="float-right"><a onclick="gotoTop()" href="#">Back to top</a></p>

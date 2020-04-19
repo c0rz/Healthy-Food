@@ -20,4 +20,18 @@ class Blog extends CI_Controller
         $this->load->view('header.phtml', $data);
         $this->load->view('blog/landing', $data);
     }
+
+    public function view($url) {
+        $data['list_config'] = $this->config->config;
+        $con = array('url' => $url);
+        $data_artikel = $this->berita->getData($con);
+        if ($data_artikel) {
+            $data['artikel'] = $data_artikel;
+            $this->load->view('header.phtml', $data);
+            $this->load->view('blog/read', $data);
+        } else {
+            $this->load->view('header.phtml', $data);
+            $this->load->view('blog/landing', $data);
+        }
+    }
 }

@@ -18,7 +18,11 @@ class Berita extends CI_Model
                 $this->db->where($key,$value);
             }
         }
-		if (array_key_exists("id_blog",$params)) {
+        if (array_key_exists("url",$params)) {
+            $this->db->where('url',$params['url']);
+            $query = $this->db->get();
+            $result = $query->row_array();
+        } else if (array_key_exists("id_blog",$params)) {
             $this->db->where('id_blog',$params['id_blog']);
             $query = $this->db->get();
             $result = $query->row_array();
