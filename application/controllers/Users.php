@@ -17,6 +17,7 @@ class Users extends CI_Controller
 			$this->load->view('landing', $data);
 		else :
 			$data['user_data'] = $this->session->userdata('credentials');
+			// $this->load->view('list/header.phtml', $data);
 			$this->load->view('home', $data);
 		endif;
 	}
