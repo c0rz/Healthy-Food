@@ -61,10 +61,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="first-slide" style="background-image: url(<?= base_url('assets/images/slider-bg-1.jpg') ?>); height: 80vh;">
+          <img class="first-slide" style="background-color: green; height: 80vh;">
           <div class="container">
             <div class="content style text-center">
-              <h2 class="text-white text-bold mb-2" style="margin-top: 160px;">
+              <h2 class="text-bold mb-2" style="margin-top: 160px;">
                 Layanan Konsultasi
               </h2>
               <p class="tag-text mb-5">
