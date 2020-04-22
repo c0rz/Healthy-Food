@@ -61,7 +61,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="first-slide" style="background-image: url(<?=base_url('assets/images/slider-bg-1.jpg')?>);">
+          <img class="first-slide" style="background-image: url(<?=base_url('assets/images/slider-bg-1.jpg')?>); height: 80vh;">
           <div class="container">
             <div class="carousel-caption text-left">
               <h1>With a Touch of <span style="color:blue; font-weight:bold;">Kindness.</span></h1>
