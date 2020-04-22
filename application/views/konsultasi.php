@@ -91,6 +91,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                   </div>
                 </div>
               </div>
+              <div id="chatdok1">
+               
+              </div>
 
               <!-- <div id="dokter2">
                 <div class="card" style="width:300px;">
@@ -115,7 +118,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               </div>
               <div id="dokter4">
                 <div class="card" style="width:300px;">
-                  <img class="card-img-top"  src="assets/images/dokter4.jpg" alt="Card image">
+                  <img class="card-img-top"src="assets/images/dokter4.jpg" alt="Card image">
                   <div class="card-body">
                     <center><h6>dr.Diah Anisa,O,Sp.AN</h6></center>
                     <center><p class="card-text">RS St. Carolus</p></center>
@@ -134,43 +137,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>  
               </div>   -->
 
-              <!-- <div class="row">
-                <div class="col-xl-3 col-md-6">
-                  <div class="card bg-primary text-white mb-4">
-                    <div class="card-body">Primary Card</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                      <a class="small text-white stretched-link" href="#">View Details</a>
-                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                  <div class="card bg-warning text-white mb-4">
-                    <div class="card-body">Warning Card</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                      <a class="small text-white stretched-link" href="#">View Details</a>
-                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                  </div>
-                </div> -->
-               <!--  <div class="col-xl-3 col-md-6">
-                  <div class="card bg-success text-white mb-4">
-                    <div class="card-body">Success Card</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                      <a class="small text-white stretched-link" href="#">View Details</a>
-                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                  </div>
-                </div> -->
-                <!-- <div class="col-xl-3 col-md-6">
-                  <div class="card bg-danger text-white mb-4">
-                    <div class="card-body">Danger Card</div>
-                    <div class="card-footer d-flex align-items-center justify-content-between">
-                      <a class="small text-white stretched-link" href="#">View Details</a>
-                      <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                    </div>
-                  </div>
-                </div> -->
+              
               </div>
             </div>
             <!-- /#page-content-wrapper -->
