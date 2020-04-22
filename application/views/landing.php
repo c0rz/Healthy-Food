@@ -30,7 +30,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="<?= base_url() ?>">Halaman Utama</a>
+              <a class="nav-link" href="<?= base_url() ?>"><i class="fas fa-home"></i> Halaman Utama</a>
+              <a class="nav-link" href="<?= base_url('blog') ?>"><i class="fas fa-blog"></i> Portal Berita</a>
             </li>
           </ul>
           <div class="navbar-form navbar-left">
@@ -58,7 +59,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="first-slide" style="background-color: #8d3faa;">
+          <img class="first-slide" style="background-image: url(<?=base_url('assets/images/slider-bg-1.jpg')?>);">
           <div class="container">
             <div class="carousel-caption text-left">
               <h1>With a Touch of <span style="color:blue; font-weight:bold;">Kindness.</span></h1>
@@ -68,7 +69,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </div>
         </div>
         <div class="carousel-item">
-          <img class="second-slide" style="background-color: #3f3faa;">
+          <img class="second-slide" style="background-image: url(<?=base_url('assets/images/slider-bg-1.jpg')?>);">
           <div class="container">
             <div class="carousel-caption">
               <h1>Another example headline.</h1>
@@ -78,7 +79,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </div>
         </div>
         <div class="carousel-item">
-          <img class="third-slide" style="background-color: #c24531;">
+          <img class="third-slide" style="background-image: url(<?=base_url('assets/images/slider-bg-1.jpg')?>);">
           <div class="container">
             <div class="carousel-caption text-right">
               <h1>One more for good measure.</h1>
