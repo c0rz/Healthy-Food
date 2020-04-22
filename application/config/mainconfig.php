@@ -10,4 +10,4 @@ $config['base_plugins'] = 'assets/plugins';
 $config['base_images'] = 'assets/images';
 $config['base_fonts'] = 'assets/font-awesome';
 $config['other_base'] = 'assets/fonts';
-$config['title'] = 'SeSel';
+$config['title'] = 'Sehat Bersama';
