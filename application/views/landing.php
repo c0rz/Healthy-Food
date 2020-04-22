@@ -61,17 +61,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="first-slide" style="background-image: url(<?=base_url('assets/images/slider-bg-1.jpg')?>); height: 80vh;">
+          <img class="first-slide" style="background-image: url(<?= base_url('assets/images/slider-bg-1.jpg') ?>); height: 80vh;">
           <div class="container">
-            <div class="carousel-caption text-left">
-              <h1>With a Touch of <span style="color:blue; font-weight:bold;">Kindness.</span></h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            <div class="content style text-center">
+              <h2 class="text-white text-bold mb-2" style="margin-top: 160px;">
+                Layanan Konsultasi
+              </h2>
+              <p class="tag-text mb-5">
+                Kami menawarkan konsultasi gratis sebelum pemeriksaan
+                lebih lanjut.
+              </p>
+              <a href="#" class="btn btn-main btn-white">Eksplorasi</a>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="second-slide" style="background-image: url(<?=base_url('assets/images/slider-bg-1.jpg')?>);">
+          <img class="second-slide" style="background-image: url(<?= base_url('assets/images/slider-bg-2.jpg') ?>);">
           <div class="container">
             <div class="carousel-caption">
               <h1>Another example headline.</h1>
@@ -81,7 +86,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </div>
         </div>
         <div class="carousel-item">
-          <img class="third-slide" style="background-image: url(<?=base_url('assets/images/slider-bg-1.jpg')?>);">
+          <img class="third-slide" style="background-image: url(<?= base_url('assets/images/slider-bg-3.jpg') ?>);">
           <div class="container">
             <div class="carousel-caption text-right">
               <h1>One more for good measure.</h1>
