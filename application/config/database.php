@@ -75,7 +75,7 @@ $query_builder = TRUE;
 require_once('mainconfig.php');
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '74.207.231.136',
 	'username' => $config['mysql_username'],
 	'password' => $config['mysql_password'],
 	'database' => $config['mysql_database'],

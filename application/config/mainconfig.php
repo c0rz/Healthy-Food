@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $config['mysql_host'] = 'localhost';
 $config['mysql_username'] = 'db_webpro';
-$config['mysql_password'] = 'password';
+$config['mysql_password'] = 'Password123@';
 $config['mysql_database'] = 'db_webpro';
 $config['base_js'] = 'assets/js';
 $config['base_css'] = 'assets/css';
