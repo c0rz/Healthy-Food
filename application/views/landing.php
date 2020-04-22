@@ -66,7 +66,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="carousel-caption text-left">
               <h1>With a Touch of <span style="color:blue; font-weight:bold;">Kindness.</span></h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-main btn-white" href="#" role="button">Sign up today</a></p>
+              <p><a class="btn btn-outline-primary btn-rounded waves-effect" href="#" role="button">Sign up today</a></p>
             </div>
           </div>
         </div>
