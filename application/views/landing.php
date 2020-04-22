@@ -64,8 +64,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <img class="first-slide" style="background-color: #3f3faa;">
           <div class="container">
             <div class="carousel-caption text-right">
-              <h1 class="text-white text-bold mb-2" style="margin-top: 160px;">Layanan Konsultasi </h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1 class="text-white text-bold" style="margin-top: 160px;">Layanan Konsultasi </h1>
+              <p>Kami menawarkan konsultasi gratis sebelum pemeriksaan lebih lanjut.</p>
               <p><a class="btn btn-outline-success text-white" href="#" role="button">Sign up today</a></p>
             </div>
           </div>
