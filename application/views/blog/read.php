@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="col-md-12">
                     <div class="card mb-12 wow fadeIn">
 
-                        <img src="<?=$artikel['gambar']?>" class="img-fluid" alt="">
+                        <img src="<?= base_url('assets/blog/' . $artikel["gambar"]) ?>" class="img-fluid" alt="">
 
                     </div>
                     <hr>
@@ -17,59 +17,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="card mb-4 wow fadeIn">
                 <div class="card-body">
                     <h1>
-                        <p class="my-4 text-center"><?=$artikel['judul']?></p>
+                        <p class="my-4 text-center"><?= $artikel['judul'] ?></p>
                     </h1>
                     <p>
-                        <?=$artikel['isi_blog']?>
+                        <?= $artikel['isi_blog'] ?>
                     </p>
 
                 </div>
 
             </div>
-            <!--/.Card-->
-
-            <!--Card-->
             <div class="card mb-4 wow fadeIn">
-
                 <div class="card-header font-weight-bold">
                     <span>About author</span>
-                    <span class="pull-right">
-                        <a href="">
-                            <i class="fab fa-facebook-f mr-2"></i>
-                        </a>
-                        <a href="">
-                            <i class="fab fa-twitter mr-2"></i>
-                        </a>
-                        <a href="">
-                            <i class="fab fa-instagram mr-2"></i>
-                        </a>
-                        <a href="">
-                            <i class="fab fa-linkedin-in mr-2"></i>
-                        </a>
-                    </span>
                 </div>
-
-                <!--Card content-->
                 <div class="card-body">
 
                     <div class="media d-block d-md-flex mt-3">
                         <img class="d-flex mb-3 mx-auto z-depth-1" src="https://mdbootstrap.com/img/Photos/Avatars/img (30).jpg" alt="Generic placeholder image" style="width: 100px;">
                         <div class="media-body text-center text-md-left ml-md-3 ml-0">
-                            <h5 class="mt-0 font-weight-bold">Caroline Horwitz
+                            <h5 class="mt-0 font-weight-bold"><?= $author["nama_lengkap"] ?>
                             </h5>
-                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
-                            quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-                            similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-                            fuga.
                         </div>
                     </div>
                 </div>
             </div>
     </div>
 </main>
-<!--Main layout-->
-
-<!--Footer-->
 <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
     <hr class="my-4">
     <a onclick="gotoTop()" href="#">

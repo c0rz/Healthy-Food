@@ -50,4 +50,9 @@ class User extends CI_Model
         $update = $this->db->update($this->userTbl, $data, array('id_akun'=>$id));
         return $update?true:false;
     }
+
+    public function delete($id){
+        $delete = $this->db->delete($this->userTbl, array('id_akun'=>$id));
+        return $delete?true:false;
+    }
 }

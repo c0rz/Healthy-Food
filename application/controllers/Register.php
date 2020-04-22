@@ -25,30 +25,37 @@ class Register extends CI_Controller
 				$tanggal_lahir = $this->input->post('ttl');
 				if ($email && $password && $cek_password && $nama_lengkap && $tanggal_lahir) {
 					if ($password == $cek_password) {
-						$con['returnType'] = 'count';
-						$con['conditions'] = array(
-							'email' => $email
-						);
-						$user = $this->user->getData($con);
-						if ($user > 0) {
-							$data['error_message'] = "Email sudah terdaftar.";
-							$this->load->view('auth/daftar', $data);
-						} else {
-							$userData = array(
-								'nama_lengkap' => $nama_lengkap,
-								'tanggal_lahir' => $tanggal_lahir,
-								'email' => $email,
-								'password' => md5($password),
-								'level' => 'Member',
+						$valid = new DateTime($tanggal_lahir);
+						$skrng = new DateTime('today');
+						if ($valid < $skrng) {
+							$con['returnType'] = 'count';
+							$con['conditions'] = array(
+								'email' => $email
 							);
-							$insert = $this->user->insert($userData);
-							if ($insert) {
-								$data['sukses_message'] = "Berhasil membuat akun, sekarang anda bisa Login/Masuk.";
+							$user = $this->user->getData($con);
+							if ($user > 0) {
+								$data['error_message'] = "Email sudah terdaftar.";
 								$this->load->view('auth/daftar', $data);
 							} else {
-								$data['error_message'] = "Terdapat masalah pada bagian penambahan database (1).";
-								$this->load->view('auth/daftar', $data);
+								$userData = array(
+									'nama_lengkap' => $nama_lengkap,
+									'tanggal_lahir' => $tanggal_lahir,
+									'email' => $email,
+									'password' => md5($password),
+									'level' => 'Member',
+								);
+								$insert = $this->user->insert($userData);
+								if ($insert) {
+									$data['sukses_message'] = "Berhasil membuat akun, sekarang anda bisa Login/Masuk.";
+									$this->load->view('auth/daftar', $data);
+								} else {
+									$data['error_message'] = "Terdapat masalah pada bagian penambahan database (1).";
+									$this->load->view('auth/daftar', $data);
+								}
 							}
+						} else {
+							$data['error_message'] = "Tanggal lahir tidak valid.";
+							$this->load->view('auth/daftar', $data);
 						}
 					} else {
 						$data['error_message'] = "Konfirmasi password tidak sesuai dengan password.";

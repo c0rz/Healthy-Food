@@ -50,7 +50,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'users';
-$route['404_override'] = '';
+$route['404_override'] = 'template/error';
 $route['translate_uri_dashes'] = FALSE;
 
+// BLOG ROUTES
+$route['new_post'] = 'blog/buat';
 $route['read/(:any)'] = 'blog/view/$1';
+
+
+// USER ROUTES
+$route['profile'] = 'users/update/';
+
+// ADMIN ROUTES
+$route['lihat_user'] = 'admin/lihat_user/';
+$route['verif_post'] = 'admin/verif_blog/';
+$route['daftar_dokter'] = 'admin/dokter/';
