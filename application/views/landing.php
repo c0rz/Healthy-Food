@@ -31,6 +31,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="<?= base_url() ?>"><i class="fas fa-home"></i> Halaman Utama</a>
+            </li>
+            <li class="nav-item active">
               <a class="nav-link" href="<?= base_url('blog') ?>"><i class="fas fa-blog"></i> Portal Berita</a>
             </li>
           </ul>
