@@ -61,7 +61,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="first-slide" style="background-color= green;">
+          <img class="first-slide" style="background-color: #3f3faa;">
           <div class="container">
             <div class="carousel-caption text-left">
               <h1>With a Touch of <span style="color:blue; font-weight:bold;">Kindness.</span></h1>
@@ -71,7 +71,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </div>
         </div>
         <div class="carousel-item">
-          <img class="second-slide" style="background-color= blue;">
+          <img class="second-slide" style="background-color: #c24531;">
           <div class="container">
             <div class="carousel-caption">
               <h1>Another example headline.</h1>
@@ -81,7 +81,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </div>
         </div>
         <div class="carousel-item">
-          <img class="third-slide" style="background-color= grey;">
+          <img class="third-slide" style="background-color: #8d3faa;">
           <div class="container">
             <div class="carousel-caption text-right">
               <h1>One more for good measure.</h1>
