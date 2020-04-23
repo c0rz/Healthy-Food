@@ -57,6 +57,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['new_post'] = 'blog/buat';
 $route['read/(:any)'] = 'blog/view/$1';
 
+// DOKTER ROUTES
+$route['inbox'] = 'dokter/cek_inbox';
 
 // USER ROUTES
 $route['profile'] = 'users/update/';
