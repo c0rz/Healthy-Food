@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2020 at 04:45 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Generation Time: Apr 23, 2020 at 08:49 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,7 +45,8 @@ CREATE TABLE `account` (
 INSERT INTO `account` (`id_akun`, `nama_lengkap`, `tanggal_lahir`, `level`, `email`, `password`, `semua_spesialisasi`) VALUES
 (1, 'Admin', '1995-04-12', 'Admin', 'admin@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', ''),
 (2, 'Dr Premium', '1990-03-01', 'Dokter', 'dokter@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', ''),
-(3, 'Dr Burhan Butar-Butar, Sp.GK', '1983-05-28', 'Dokter', 'mata@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'Spesialis Gizi');
+(3, 'Dr Burhan Butar-Butar, Sp.GK', '1983-05-28', 'Dokter', 'mata@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'Spesialis Gizi'),
+(4, 'Aa Munjul', '2002-07-10', 'Member', 'aa@munjul.com', '5f4dcc3b5aa765d61d8327deb882cf99', '');
 
 -- --------------------------------------------------------
 
@@ -75,13 +76,42 @@ INSERT INTO `blog` (`id_blog`, `judul`, `isi_blog`, `gambar`, `rilis_blog`, `url
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_kesehatan`
+-- Table structure for table `konsul`
 --
 
-CREATE TABLE `kategori_kesehatan` (
-  `id_kategori` int(11) NOT NULL,
-  `nama_kategori` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `konsul` (
+  `idk` int(11) NOT NULL,
+  `id_dokter` int(5) NOT NULL,
+  `id_konsul` int(5) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `topic` varchar(255) NOT NULL,
+  `status` int(2) NOT NULL,
+  `created` datetime NOT NULL,
+  `dokter_respone` int(2) NOT NULL,
+  `user_respone` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `konsul`
+--
+
+INSERT INTO `konsul` (`idk`, `id_dokter`, `id_konsul`, `subject`, `topic`, `status`, `created`, `dokter_respone`, `user_respone`) VALUES
+(1, 2, 4, 'Kenapa Aldy dan Gready GOBLOK?', 'Galer', 0, '2020-04-23 23:06:47', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pesan_konsul`
+--
+
+CREATE TABLE `pesan_konsul` (
+  `id_pesan` int(11) NOT NULL,
+  `idk` int(5) NOT NULL,
+  `pesan` int(11) NOT NULL,
+  `ida` int(5) NOT NULL,
+  `idd` int(5) NOT NULL,
+  `created` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -100,10 +130,16 @@ ALTER TABLE `blog`
   ADD PRIMARY KEY (`id_blog`);
 
 --
--- Indexes for table `kategori_kesehatan`
+-- Indexes for table `konsul`
 --
-ALTER TABLE `kategori_kesehatan`
-  ADD PRIMARY KEY (`id_kategori`);
+ALTER TABLE `konsul`
+  ADD PRIMARY KEY (`idk`);
+
+--
+-- Indexes for table `pesan_konsul`
+--
+ALTER TABLE `pesan_konsul`
+  ADD PRIMARY KEY (`id_pesan`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -113,7 +149,7 @@ ALTER TABLE `kategori_kesehatan`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `blog`
@@ -122,10 +158,16 @@ ALTER TABLE `blog`
   MODIFY `id_blog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kategori_kesehatan`
+-- AUTO_INCREMENT for table `konsul`
 --
-ALTER TABLE `kategori_kesehatan`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `konsul`
+  MODIFY `idk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `pesan_konsul`
+--
+ALTER TABLE `pesan_konsul`
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
