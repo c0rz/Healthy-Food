@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Apr 2020 pada 11.49
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.4
+-- Generation Time: Apr 23, 2020 at 04:45 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `account`
+-- Table structure for table `account`
 --
 
 CREATE TABLE `account` (
@@ -34,22 +34,23 @@ CREATE TABLE `account` (
   `tanggal_lahir` date NOT NULL,
   `level` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `semua_spesialisasi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `account`
+-- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`id_akun`, `nama_lengkap`, `tanggal_lahir`, `level`, `email`, `password`) VALUES
-(1, 'Cornelius Alfredo', '2020-04-16', 'Admin', 'admin@email.com', '5f4dcc3b5aa765d61d8327deb882cf99'),
-(2, 'Aldy', '2020-12-22', 'Member', 'aldy@email.com', '5f4dcc3b5aa765d61d8327deb882cf99'),
-(3, 'aldy', '2020-04-08', 'Member', 'akscakn@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99');
+INSERT INTO `account` (`id_akun`, `nama_lengkap`, `tanggal_lahir`, `level`, `email`, `password`, `semua_spesialisasi`) VALUES
+(1, 'Admin', '1995-04-12', 'Admin', 'admin@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', ''),
+(2, 'Dr Premium', '1990-03-01', 'Dokter', 'dokter@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', ''),
+(3, 'Dr Burhan Butar-Butar, Sp.GK', '1983-05-28', 'Dokter', 'mata@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'Spesialis Gizi');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `blog`
+-- Table structure for table `blog`
 --
 
 CREATE TABLE `blog` (
@@ -58,48 +59,73 @@ CREATE TABLE `blog` (
   `isi_blog` text NOT NULL,
   `gambar` varchar(225) NOT NULL,
   `rilis_blog` varchar(225) NOT NULL,
-  `url` varchar(255) NOT NULL
+  `url` text NOT NULL,
+  `id_akun` int(20) NOT NULL,
+  `verif` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `blog`
+-- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id_blog`, `judul`, `isi_blog`, `gambar`, `rilis_blog`, `url`) VALUES
-(1, '4 Cara Sederhana Mencegah Virus Corona Covid-19, Wajib Dilakukan', 'Peningkatan kasus virus corona Covid-19 masih berlangsung di berbagai penjuru dunia. Hingga awal April ini belum ditemukan vaksin yang tepat untuk menangkalnya.\r\n\r\nMeskipun begitu, para peneliti di seluruh dunia tetap terus mengupayakan serangkaian uji tes vaksin untuk menekan laju penyebaran virus corona COVID-19.\r\n\r\nMaka dari itu, menerapkan tindakan pencegahan dengan semaksimal mungkin adalah salah satu hal yang wajib dilakukan. Berikut merupakan 10 cara sederhana yang dapat Anda lakukan di rumah. Artikel ini disadur dari Merdeka.com.\r\n\r\n1. Cuci Tangan\r\n\r\nTindakan pertama yang dapat dilakukan untuk menangkal virus corona adalah dengan rajin mencuci tangan. Sebab, tangan adalah salah satu anggota tubuh yang menjadi sumber penyakit.\r\n\r\nCuci tangan dengan durasi minimal 20 detik untuk membunuh virus corona menggunakan sabun dan air bersih yang mengalir. Setelah itu, keringkan tangan menggunakan kain yang bersih atau tisu.\r\n\r\nTindakan pencegahan yang satu ini dianggap lebih efektif untuk membunuh kuman, bakteri, termasuk virus corona. Cuci tangan merupakan langkah yang disarankan oleh banyak pihak, termasuk Organisasi Kesehatan Dunia.\r\n\r\n2. Hindari Sentuh Wajah\r\n\r\nTelah diketahui bahwa tangan dapat menjadi sumber penyakit sebab sering terjadi kontak dengan benda maupun orang lain. Sementara itu, virus corona disinyalir dapat masuk tubuh manusia melalui segitiga wajah yakni mata, hidung, dan mulut.\r\n\r\nMaka dari itu, hindari untuk menyentuh wajah menggunakan tangan. Apabila terpaksa harus menyentuh wajah, maka pastikan untuk mencuci tangan terlebih dahulu dengan sabun.\r\n\r\n3. Etika Bersin dan Batuk\r\n\r\nTerapkan etika bersin dan batuk dengan benar menggunakan siku tangan bagian dalam atau tisu bersih. Sebab, cairan yang diproduksi pada saat batuk dan bersin tersebut dapat menjadi media penularan virus corona.\r\n\r\nApabila Anda menggunakan tisu, maka segera buang ke tempat sampah dan cuci tangan menggunakan sabun hingga bersih dan kering kembali.\r\n\r\n4. Memakai Masker\r\n\r\nVirus corona tidak menyebar melalui udara. Namun, penggunaan masker dapat meminimalisir penularan virus corona. Sebab, virus corona dapat menyebar melalui droplets dan dapat masuk ke dalam tubuh melalui selaput lender seperti mata, mulut, dan hidung.\r\n\r\nMasker juga dapat digunakan ketika seseorang dalam kondisi yang kurang sehat. Hindari untuk menggunakan satu masker secara berulang-ulang. Sebab, masker dapat mengandung berbagai jenis kuman, bakteri, dan virus setelah dipakai.', 'http://www.dokterweb.com/wp-content/uploads/2016/12/project-blog-by-dokterweb.jpg', 'Sekarang', ''),
-(2, 'Masker biar sehat blok!', 'Peningkatan kasus virus corona Covid-19 masih berlangsung di berbagai penjuru dunia. Hingga awal April ini belum ditemukan vaksin yang tepat untuk menangkalnya.\r\n\r\nMeskipun begitu, para peneliti di seluruh dunia tetap terus mengupayakan serangkaian uji tes vaksin untuk menekan laju penyebaran virus corona COVID-19.\r\n\r\nMaka dari itu, menerapkan tindakan pencegahan dengan semaksimal mungkin adalah salah satu hal yang wajib dilakukan. Berikut merupakan 10 cara sederhana yang dapat Anda lakukan di rumah. Artikel ini disadur dari Merdeka.com.\r\n\r\n1. Cuci Tangan\r\n\r\nTindakan pertama yang dapat dilakukan untuk menangkal virus corona adalah dengan rajin mencuci tangan. Sebab, tangan adalah salah satu anggota tubuh yang menjadi sumber penyakit.\r\n\r\nCuci tangan dengan durasi minimal 20 detik untuk membunuh virus corona menggunakan sabun dan air bersih yang mengalir. Setelah itu, keringkan tangan menggunakan kain yang bersih atau tisu.\r\n\r\nTindakan pencegahan yang satu ini dianggap lebih efektif untuk membunuh kuman, bakteri, termasuk virus corona. Cuci tangan merupakan langkah yang disarankan oleh banyak pihak, termasuk Organisasi Kesehatan Dunia.\r\n\r\n2. Hindari Sentuh Wajah\r\n\r\nTelah diketahui bahwa tangan dapat menjadi sumber penyakit sebab sering terjadi kontak dengan benda maupun orang lain. Sementara itu, virus corona disinyalir dapat masuk tubuh manusia melalui segitiga wajah yakni mata, hidung, dan mulut.\r\n\r\nMaka dari itu, hindari untuk menyentuh wajah menggunakan tangan. Apabila terpaksa harus menyentuh wajah, maka pastikan untuk mencuci tangan terlebih dahulu dengan sabun.\r\n\r\n3. Etika Bersin dan Batuk\r\n\r\nTerapkan etika bersin dan batuk dengan benar menggunakan siku tangan bagian dalam atau tisu bersih. Sebab, cairan yang diproduksi pada saat batuk dan bersin tersebut dapat menjadi media penularan virus corona.\r\n\r\nApabila Anda menggunakan tisu, maka segera buang ke tempat sampah dan cuci tangan menggunakan sabun hingga bersih dan kering kembali.\r\n\r\n4. Memakai Masker\r\n\r\nVirus corona tidak menyebar melalui udara. Namun, penggunaan masker dapat meminimalisir penularan virus corona. Sebab, virus corona dapat menyebar melalui droplets dan dapat masuk ke dalam tubuh melalui selaput lender seperti mata, mulut, dan hidung.\r\n\r\nMasker juga dapat digunakan ketika seseorang dalam kondisi yang kurang sehat. Hindari untuk menggunakan satu masker secara berulang-ulang. Sebab, masker dapat mengandung berbagai jenis kuman, bakteri, dan virus setelah dipakai.', 'https://cdn1-production-images-kly.akamaized.net/GOL-jAcIAMmHJULwh6S1JB8Go4k=/640x360/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2790521/original/073924800_1556430263-iStock-533567012.jpg', 'Sekarang', '');
+INSERT INTO `blog` (`id_blog`, `judul`, `isi_blog`, `gambar`, `rilis_blog`, `url`, `id_akun`, `verif`) VALUES
+(1, 'Lawan Bad Mood, Ini 3 Makanan yang Bikin Bahagia', 'Tak terasa sudah sebulan lebih sebagian besar dari kita menjalani work from home dan social distancing serta karantina mandiri untuk mencegah penyebaran virus corona atau Covid-19. Perasaan sedih, bosan, cemas hingga stress tentunya sudah kita rasakan selama harus berada di rumah aja. Meski begitu kita jangan sampai lupa untuk bahagia, sebab perasaan bahagia dapat memperkuat sistem kekebalan tubuh kita untuk menangkal virus.<br/>\r\n\r\nCara termudah adalah dengan mengonsumsi makanan yang enak bergizi yang bisa membangkitkan perasaan bahagia. Seperti pepatah, \"Jika perutmu bahagia, maka kamu akan lebih bahagia\". Berikut ini 7 makanan yang tidak hanya menyehatkan tubuh kamu, tapi juga membuat kamu merasa lebih bahagia, santai dan mengusir rasa depresi atau cemas selama harus di rumah aja.  <br/><br/>\r\n\r\n1. Pisang<br/><br/>\r\n\r\nSelain buah alpukat yang kaya akan antioksidan dan asam folat, ternyata buah pisang juga kaya akan antioksidan, vitamin, dan probiotik. Buah ini membantu proses pencernaan, membantu kinerja usus yang secara langsung mempengaruhi mood kita. Selain itu, pisang mengandung tryptophan, sejenis protein yang diubah tubuh menjadi serotonin yang dikenal untuk membuat rileks, memperbaiki mood.\r\n<br/><br/>\r\n2. Mangga<br/><br/>\r\n\r\nSeperti halnya pisang, buah mangga juga kaya akan antioksidan, vitamin, dan mineral. Warna, wangi dan rasa mangga juga sangat lekat dengan hal-hal yang membuat bahagia. Buah ini juga memiliki kandungan serat yang bisa membantu melancarkan proses pencernaan.<br/><br/>\r\n\r\n3. Keju<br/><br/>\r\n\r\nSebagian dari kita mungkin hanya berpikir coklat saja yang mampu memberikan kebahagiaan, ternyata keju juga merupakan salah satu bahan makanan yang ampuh bikin kamu bahagia karena memiliki kadar triptofan yang tinggi! Keju sekarang bisa banyak kamu temukan di berbagai makanan dan camilan kekinian. Untuk camilan lain, kamu juga bisa memilih kacang almond memiliki kandungan omega-3 yang dapat memproduksi zat dopamine yang bisa mengatasi rasa grogi dan nervous.', 'ragam_buah_con.jpg', 'Hari Tuesday, Jam 19:09', '75cab3f120dc0237697ec37b070c3096', 2, 1),
+(2, 'Cara Menjaga Kesehatan Mental Tengah Pandemi Corona COVID-19', 'Di tengah pandemi virus Corona Covid-19 yang masih marak, masyarakat diimbau mengurung diri di rumah. Ini dilakukan untuk menekan penyebaran virus yang pertama kali munculdi Wuhan, China itu.\r\n\r\nHanya saja, hal ini ternyata malah bisa meningkatkan kecemasan kita dan mencederai kesehatan mental.\r\n\r\nNamun, menurut Psikolog Intan Erlita, M.Psi, kecemasaan sebenarnya seuatu yang alami atau normal yang dirasakan seseorang. Dengan penanganan yang tepat, kecemasan justu menjadi penanda bagi tubuh untuk melakukan hal yang disarankan, seperti dalam keadaan pandemi virus corona covid-19.\r\n\r\n\"Kecemasan merupakan alarm tubuh untuk kita lebih mawas diri seperti ada wabah virus corona. Kita lebih sadar akan kesehatan tubuh, minum vitamin, makan-makanan sehat, dan rajin cuci tangan. Jadi kita tahu harus melakukan apa,\" ujar Erlita.\r\n\r\nKecemasaan tetap dibutuhkan agar tidak cuek dengan keadaan, namun jangan sampai berlebihan. Sebab kita nantinya malah sulit membedakan mana benar atau salah jika cemas berlebih.\r\n\r\n\"Jadi kalau berlebih malah jadi stres hingga depresi. Malah nantinya ada masalah psikologis. Cemas boleh untuk alarm diri namun tidak berlebih,\" tambahnya.\r\n\r\nIa pun membagikan beberapa tips agar kita tetap menjaga kesehatan mental dan tidak kebingungan dalam menerima informasi seperti mengenai virus corona covid-19.\r\n\r\nHindari Berita Negatif', 'gambarr.jpg', 'Hari Wednesday, Jam 01:00', 'cara-menjaga-kesehatan-mental-tengah-pandemi-corona-covid-19', 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategori_kesehatan`
+--
+
+CREATE TABLE `kategori_kesehatan` (
+  `id_kategori` int(11) NOT NULL,
+  `nama_kategori` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `account`
+-- Indexes for table `account`
 --
 ALTER TABLE `account`
   ADD PRIMARY KEY (`id_akun`);
 
 --
--- Indeks untuk tabel `blog`
+-- Indexes for table `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`id_blog`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indexes for table `kategori_kesehatan`
+--
+ALTER TABLE `kategori_kesehatan`
+  ADD PRIMARY KEY (`id_kategori`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `account`
+-- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
   MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `blog`
+-- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
   MODIFY `id_blog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `kategori_kesehatan`
+--
+ALTER TABLE `kategori_kesehatan`
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
