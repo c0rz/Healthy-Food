@@ -30,7 +30,7 @@
     e.preventDefault();
     $("#balikin").toggleClass("toggled");
   });
-  <?php if ($user_data["level"] == "Admin") { ?>
+  <?php if ($user_data["level"] != "Member") { ?>
     $(document).ready(function() {
       $(".search").keyup(function() {
         var searchTerm = $(".search").val();
