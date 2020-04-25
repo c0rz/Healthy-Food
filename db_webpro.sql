@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2020 at 08:49 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.2
+-- Waktu pembuatan: 25 Apr 2020 pada 14.24
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `account`
+-- Struktur dari tabel `account`
 --
 
 CREATE TABLE `account` (
@@ -39,19 +39,19 @@ CREATE TABLE `account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `account`
+-- Dumping data untuk tabel `account`
 --
 
 INSERT INTO `account` (`id_akun`, `nama_lengkap`, `tanggal_lahir`, `level`, `email`, `password`, `semua_spesialisasi`) VALUES
 (1, 'Admin', '1995-04-12', 'Admin', 'admin@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', ''),
-(2, 'Dr Premium', '1990-03-01', 'Dokter', 'dokter@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', ''),
+(2, 'Dr Premium', '1990-03-01', 'Dokter', 'dokter@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'Spesialis Rumah Tangga'),
 (3, 'Dr Burhan Butar-Butar, Sp.GK', '1983-05-28', 'Dokter', 'mata@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'Spesialis Gizi'),
 (4, 'Aa Munjul', '2002-07-10', 'Member', 'aa@munjul.com', '5f4dcc3b5aa765d61d8327deb882cf99', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
+-- Struktur dari tabel `blog`
 --
 
 CREATE TABLE `blog` (
@@ -66,7 +66,7 @@ CREATE TABLE `blog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `blog`
+-- Dumping data untuk tabel `blog`
 --
 
 INSERT INTO `blog` (`id_blog`, `judul`, `isi_blog`, `gambar`, `rilis_blog`, `url`, `id_akun`, `verif`) VALUES
@@ -76,7 +76,7 @@ INSERT INTO `blog` (`id_blog`, `judul`, `isi_blog`, `gambar`, `rilis_blog`, `url
 -- --------------------------------------------------------
 
 --
--- Table structure for table `konsul`
+-- Struktur dari tabel `konsul`
 --
 
 CREATE TABLE `konsul` (
@@ -88,29 +88,22 @@ CREATE TABLE `konsul` (
   `status` int(2) NOT NULL,
   `created` datetime NOT NULL,
   `dokter_respone` int(2) NOT NULL,
-  `user_respone` int(2) NOT NULL
+  `user_respone` int(2) NOT NULL,
+  `url_hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `konsul`
---
-
-INSERT INTO `konsul` (`idk`, `id_dokter`, `id_konsul`, `subject`, `topic`, `status`, `created`, `dokter_respone`, `user_respone`) VALUES
-(1, 2, 4, 'Kenapa Aldy dan Gready GOBLOK?', 'Galer', 0, '2020-04-23 23:06:47', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesan_konsul`
+-- Struktur dari tabel `pesan_konsul`
 --
 
 CREATE TABLE `pesan_konsul` (
   `id_pesan` int(11) NOT NULL,
-  `idk` int(5) NOT NULL,
-  `pesan` int(11) NOT NULL,
+  `url_hash` varchar(255) NOT NULL,
+  `pesan` text NOT NULL,
   `ida` int(5) NOT NULL,
-  `idd` int(5) NOT NULL,
-  `created` varchar(255) NOT NULL
+  `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -118,53 +111,53 @@ CREATE TABLE `pesan_konsul` (
 --
 
 --
--- Indexes for table `account`
+-- Indeks untuk tabel `account`
 --
 ALTER TABLE `account`
   ADD PRIMARY KEY (`id_akun`);
 
 --
--- Indexes for table `blog`
+-- Indeks untuk tabel `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`id_blog`);
 
 --
--- Indexes for table `konsul`
+-- Indeks untuk tabel `konsul`
 --
 ALTER TABLE `konsul`
   ADD PRIMARY KEY (`idk`);
 
 --
--- Indexes for table `pesan_konsul`
+-- Indeks untuk tabel `pesan_konsul`
 --
 ALTER TABLE `pesan_konsul`
   ADD PRIMARY KEY (`id_pesan`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `account`
+-- AUTO_INCREMENT untuk tabel `account`
 --
 ALTER TABLE `account`
   MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `blog`
+-- AUTO_INCREMENT untuk tabel `blog`
 --
 ALTER TABLE `blog`
   MODIFY `id_blog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `konsul`
+-- AUTO_INCREMENT untuk tabel `konsul`
 --
 ALTER TABLE `konsul`
-  MODIFY `idk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idk` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pesan_konsul`
+-- AUTO_INCREMENT untuk tabel `pesan_konsul`
 --
 ALTER TABLE `pesan_konsul`
   MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT;

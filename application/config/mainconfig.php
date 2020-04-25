@@ -1,9 +1,9 @@
-P<?php
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$config['mysql_host'] = '74.207.231.136:2002';
-$config['mysql_username'] = 'db_tubes';
-$config['mysql_password'] = 'zxcad123';
-$config['mysql_database'] = 'db_tubes';
+$config['mysql_host'] = 'localhost';
+$config['mysql_username'] = 'db_webpro';
+$config['mysql_password'] = 'password';
+$config['mysql_database'] = 'db_webpro';
 $config['base_js'] = 'assets/js';
 $config['base_css'] = 'assets/css';
 $config['base_plugins'] = 'assets/plugins';
