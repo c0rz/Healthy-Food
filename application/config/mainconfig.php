@@ -1,6 +1,6 @@
 P<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$config['mysql_host'] = 'boost-market.us.to';
+$config['mysql_host'] = 'http://boost-market.us.to/';
 $config['mysql_username'] = 'db_webpro';
 $config['mysql_password'] = 'Zxcasd123@';
 $config['mysql_database'] = 'db_webpro';
