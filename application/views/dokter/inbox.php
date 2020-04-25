@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="container-fluid">
-            <h1 class="mt-4">Panel Admin</h1>
+            <h1 class="mt-4">Panel Dokter</h1>
         </div>
         <div class="col lg-12">
             <div class="form-group pull-right">
-                <input type="text" class="search form-control" placeholder="User yang ingin dicari?" autocomplete="off">
+                <input type="text" class="search form-control" placeholder="yang ingin dicari?" autocomplete="off">
             </div>
             <?php if (isset($error_message)) { ?>
                 <div class="alert alert-danger col-md-12" role="alert">
@@ -27,6 +27,7 @@
                         <th scope="col">Topic</th>
                         <th scope="col">Status</th>
                         <th scope="col">Tanggal Konsul</th>
+                        <th scope="col">BUKA PESAN</th>
                     </tr>
                     <tr class="bg-danger no-result">
                         <td colspan="6"><i class="fas fa-warning"></i> No result</td>
@@ -43,8 +44,17 @@
                                     <td><?= $row->nama_lengkap ?></th>
                                     <td><?= $p["subject"] ?></td>
                                     <td><?= $p["topic"] ?></td>
-                                    <td><?= $p["status"] ?></td>
+                                    <td><?php if ($p["status"] == 0) {
+                                        if ($p['dokter_respone'] == 0) {
+                                            print '<button type="button" class="btn btn-outline-success btn-sm">PESAN BARU</button>';
+                                        } else {
+                                            print '<button type="button" class="btn btn-outline-success btn-sm">TERBACA</button>';
+                                        }
+                                        } else {
+                                            print '<button type="button" class="btn btn-outline-danger btn-sm">CLOSED</button>';
+                                        } ?></td>
                                     <td><?= $p["created"] ?></td>
+                                    <td><a href="<?= base_url('pesan/'.$p["url_hash"]) ?>">Baca Pesan</a></td>
                                 </tr>
                     <?php }
                         } else : echo '<td colspan="6"><i class="fas fa-warning"></i> No result</td>';

@@ -62,6 +62,9 @@ $route['inbox'] = 'dokter/cek_inbox';
 
 // USER ROUTES
 $route['profile'] = 'users/update/';
+$route['pesan/(:any)'] = 'konsultasi/view/$1';
+$route['konsultasi'] = 'konsultasi/member/';
+$route['send/(:any)'] = 'konsultasi/kirim/$1';
 
 // ADMIN ROUTES
 $route['lihat_user'] = 'admin/lihat_user/';

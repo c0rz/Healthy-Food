@@ -16,6 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <link href="<?= base_url($list_config['base_css']) ?>/bootstrap.min.css" rel="stylesheet">
   <link href="<?= base_url($list_config['base_css']) ?>/boostrap-sidebar.css" rel="stylesheet">
   <link href="<?= base_url($list_config['base_css']) ?>/tabel.css" rel="stylesheet">
+  <link href="<?= base_url($list_config['base_css']) ?>/slider.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +29,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <a href="javascript:void(0);" id="lparent" class="list-group-item list-group-item-action bg-light" data-toggle="collapse" data-target="#layanan" aria-expanded="true" aria-controls="layanan">Layanan <?= $list_config['title'] ?> <i class="fas fa-angle-down text-left"></i></a>
         <div class="collapse" id="layanan" aria-labelledby="lparent" data-parent="#sidebar-wrapper">
         <?php if ($user_data['level'] ==  "Member") { ?>
-          <a href="<?= base_url('update_profile') ?>" class="list-group-item list-group-item-action bg-light"><i class="far fa-question-circle"></i> Konsultasi/Bertanya</a>
+          <a href="<?= base_url('konsultasi') ?>" class="list-group-item list-group-item-action bg-light"><i class="far fa-question-circle"></i> Konsultasi/Bertanya</a>
         <?php } ?>
           <a href="<?= base_url('blog') ?>" class="list-group-item list-group-item-action bg-light"><i class="fas fa-blog"></i> Blog</a>
         </div>
