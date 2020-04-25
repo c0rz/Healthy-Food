@@ -1,6 +1,6 @@
 P<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$config['mysql_host'] = 'localhost';
+$config['mysql_host'] = '74.207.231.136';
 $config['mysql_username'] = 'db_webpro';
 $config['mysql_password'] = 'Password2020@';
 $config['mysql_database'] = 'db_webpro';
