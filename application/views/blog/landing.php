@@ -9,13 +9,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="card-body text-white text-center py-5 px-5 my-5">
 
                 <h1 class="mb-4">
-                    <strong>Cegah Korona</strong>
+                    <b><strong style="font-family: TW Cen MT;">Bersama Lawan Corona</strong></b>
                 </h1>
-                <p>
-                    <strong>Ferari</strong>
-                </p>
+                <!-- <p>
+                    <strong>#dirumahsaja</strong>
+                </p> -->
                 <p class="mb-4">
-                    <strong>kalimat</strong>
+                    <strong style="color:#d9e3d8;font-family: TW Cen MT;">Mari bersama turunkan angka penyebaran dengan </strong>  <strong style="color:#46bd35;font-family: TW Cen MT;">#dirumahsaja</strong>
                 </p>
                 <a target="_blank" href="" class="btn btn-outline-white btn-lg">Baca
                     <i class="fas fa-graduation-cap ml-2"></i>
@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
         </section>
         <hr class="my-5">
-        <section class="text-center">
+        <section  class="text-center">
             <div class="row mb-4 wow fadeIn">
                 <?php foreach ($demo_berita as $r) {
                     $preview = substr($r['isi_blog'], 0, 100) . '...'; ?>
@@ -33,7 +33,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="view overlay">
                                 <img src="<?= $r['gambar'] ?>" class="card-img-top" alt="">
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style="position: left;">
                                 <h4 class="card-title"><?=$r['judul']?></h4>
                                 <p class="card-text"><?=$preview?></p>
                                 <a href="<?=$r['judul']?>" target="_blank" class="btn btn-primary btn-md">
