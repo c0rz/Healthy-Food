@@ -12,17 +12,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="row">
           <div class="col-lg-4">
             <div class="card bg-primary text-white mb-4">
-              <div class="card-body"><i class="fas fa-file-medical-alt"></i> Total Positif : <?= $corona_indonesia->Confirmed ?></div>
+              <div class="card-body"><i class="fas fa-file-medical-alt"></i> Total Positif : <?= $corona_indonesia[0]->positif ?></div>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="card bg-success text-white mb-4">
-              <div class="card-body"><i class="fas fa-heartbeat"></i> Total Sembuh : <?= $corona_indonesia->Recovered ?></div>
+              <div class="card-body"><i class="fas fa-heartbeat"></i> Total Sembuh : <?= $corona_indonesia[0]->sembuh ?></div>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="card bg-danger text-white mb-4">
-              <div class="card-body"><i class="fas fa-skull-crossbones"></i> Total Meninggal : <?= $corona_indonesia->Deaths ?></div>
+              <div class="card-body"><i class="fas fa-skull-crossbones"></i> Total Meninggal : <?= $corona_indonesia[0]->meninggal ?></div>
             </div>
           </div>
         </div>

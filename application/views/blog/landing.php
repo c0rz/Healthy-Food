@@ -3,91 +3,28 @@ defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <main role="blog">
     <div class="container">
-        <section class="card wow fadeIn" style="background-image: url(https://d1csarkz8obe9u.cloudfront.net/posterpreviews/stay-at-home-safe-life-prevent-corona-design-template-bfa231fbfa8cd9d7d1e206910546b9fa_screen.jpg?ts=1584757832); height: 100%; background-position: center;  background-repeat: no-repeat; background-size: cover;">
-
-            <!-- Content -->
-            <div class="card-body text-white text-center py-5 px-5 my-5">
-
-                <h1 class="mb-4">
-                    <strong>Cegah Korona</strong>
-                </h1>
-                <p>
-                    <strong>Ferari</strong>
-                </p>
-                <p class="mb-4">
-                    <strong>kalimat</strong>
-                </p>
-                <a target="_blank" href="" class="btn btn-outline-white btn-lg">Baca
-                    <i class="fas fa-graduation-cap ml-2"></i>
-                </a>
-
-            </div>
-        </section>
-        <hr class="my-5">
-        <section class="text-center">
-            <div class="row mb-4 wow fadeIn">
-                <?php foreach ($demo_berita as $r) {
-                    $preview = substr($r['isi_blog'], 0, 100) . '...'; ?>
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="view overlay">
-                                <img src="<?= $r['gambar'] ?>" class="card-img-top" alt="">
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title"><?=$r['judul']?></h4>
-                                <p class="card-text"><?=$preview?></p>
-                                <a href="<?=$r['judul']?>" target="_blank" class="btn btn-primary btn-md">
-                                <i class="fas fa-book ml-2"></i> Baca selengkapnya
-                                </a>
-                            </div>
-                        </div>
+        <div class="row">
+            <?php foreach ($berita as $list) {
+                $preview = substr($list['isi_blog'], 0, 100) . '...'; ?>
+                <div class="col-lg-5">
+                    <div class="view overlay rounded z-depth-1">
+                        <img src="<?= base_url('assets/blog/' . $list["gambar"]) ?>" class="img-fluid" alt="">
                     </div>
-                <?php } ?>
-
-            </div>
-            <nav class="d-flex justify-content-center wow fadeIn">
-                <ul class="pagination pg-blue">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">4</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">5</a>
-                    </li>
-
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
+                </div>
+                <div class="col-lg-7">
+                    <h3 class="font-weight-bold dark-grey-text">
+                        <strong><?= $list["judul"] ?></strong>
+                    </h3>
+                    <p class="grey-text"><?= $preview ?></p>
+                    <a href="<?= base_url('read/' . $list["url"]) ?>" class="btn btn-primary btn-sm"> Baca Selengkapnya
+                        <i class="fas fa-book"></i>
+                    </a>
+                </div>
+                <!--Grid column-->
+                <hr class="mb-5">
+            <?php } ?>
+        </div>
     </div>
-</main>
-
-<footer class="container">
-    <p class="float-right"><a onclick="gotoTop()" href="#">Back to top</a></p>
-    <p>&copy; 2020 <?= $list_config["title"] ?></p>
-</footer>
 </main>
 <script type="text/javascript">
     function gotoTop() {

@@ -18,7 +18,16 @@ class Blog extends CI_Controller
     {
         $this->load->helper('form');
         $data['list_config'] = $this->config->config;
-        $data['demo_berita'] = $this->berita->getData();
+        $cons['conditions'] = array(
+            'verif' => 1
+        );
+        if (!$this->session->userdata('credentials')) :
+            $data['login_cek'] = 1;
+        else:
+            $data['login_cek'] = 0;
+        endif;
+        $cons['limit'] = 5;
+        $data['berita'] = $this->berita->getData($cons);
         $this->load->view('header.phtml', $data);
         $this->load->view('blog/landing', $data);
     }
@@ -33,6 +42,11 @@ class Blog extends CI_Controller
                 $data['artikel'] = $data_artikel;
                 $con['id_akun'] = $data_artikel['id_akun'];
                 $data['author'] =  $this->user->getData($con);
+                if (!$this->session->userdata('credentials')) :
+                    $data['login_cek'] = 1;
+                else:
+                    $data['login_cek'] = 0;
+                endif;
                 $this->load->view('header.phtml', $data);
                 $this->load->view('blog/read', $data);
             } else {

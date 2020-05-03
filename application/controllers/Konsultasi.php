@@ -102,10 +102,11 @@ class Konsultasi extends CI_Controller
                 $insert = $this->pesan->insert($userData);
                 if ($session["level"] != "Dokter") {
                     $Data["dokter_respone"] = 0;
+                    $update = $this->konsul->update($Data, $id);
                 } else {
                     $Data["user_respone"] = 0;
+                    $update = $this->konsul->update($Data, $id);
                 }
-                $update = $this->konsul->update($Data, $id);
                 if ($insert) {
                     $data['sukses_message'] = "Pesan Berhasil dikirim.";
                     $data["konsul"] = $this->konsul->cari($id);
@@ -125,6 +126,31 @@ class Konsultasi extends CI_Controller
         endif;
     }
 
+    public function update($id)
+    {
+        $this->load->helper('form');
+        $data['list_config'] = $this->config->config;
+        $session = $this->session->userdata('credentials');
+        $data['user_data'] = $session;
+        if ($this->session->userdata('credentials')) :
+            $Data["status"] = 1;
+            $update = $this->konsul->update($Data, $id);
+            if ($update) {
+                $data['sukses_message'] = "Status Berhasil ditutup.";
+                $data["konsul"] = $this->konsul->cari($id);
+                $this->load->view('template/header.php', $data);
+                $this->load->view('account/read.php', $data);
+                $this->load->view('template/footer.php', $data);
+            } else {
+                $data["konsul"] = $this->konsul->cari($hash);
+                $this->load->view('template/header.php', $data);
+                $this->load->view('account/read.php', $data);
+                $this->load->view('template/footer.php', $data);
+            } else :
+            $this->load->view('template/error');
+        endif;
+    }
+    
     public function view($hash)
     {
         $this->load->helper('form');
@@ -134,10 +160,11 @@ class Konsultasi extends CI_Controller
         if ($this->session->userdata('credentials')) :
             if ($session["level"] == "Dokter") {
                 $userData["dokter_respone"] = 1;
-            } else {
+                $update = $this->konsul->update($userData, $hash);
+            } else if ($session["level"] == "Member") {
                 $userData["user_respone"] = 1;
+                $update = $this->konsul->update($userData, $hash);
             }
-            $update = $this->konsul->update($userData, $hash);
             $data["konsul"] = $this->konsul->cari($hash);
             $this->load->view('template/header.php', $data);
             $this->load->view('account/read.php', $data);

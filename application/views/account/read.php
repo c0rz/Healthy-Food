@@ -22,6 +22,8 @@
                                                         } ?>">
                                     <img src="<?php if ($profile->level == "Dokter") {
                                                     print base_url('assets/images/profiledok.png');
+                                                } else if ($profile->level == "Admin") {
+                                                    print base_url('assets/images/admin.png');
                                                 } else {
                                                     print base_url('assets/images/user.png');
                                                 } ?>" alt="Avatar" class="imgop" style="width:100%;">
@@ -32,15 +34,26 @@
                         <?php }
                         } ?>
                         <form action="<?= base_url('send/' . $konsul['url_hash']) ?>" method="post" autocomplete="off">
+                        <?php if($konsul['status'] == "0") { ?>
                             <div class="form-group">
                                 <label for="reply" class="col-form-label">Balas Pesan</label>
-                                <textarea type="text" class="form-control" value="" name="reply" required></textarea>
+                                <textarea type="text" class="form-control" name="reply" <?php if ($konsul['status'] == TRUE) {
+                                                                                                                print 'disabled';
+                                                                                                            } ?> required></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-block">
                                     KIRIM PESAN
                                 </button>
                             </div>
+                                                                                                        <?php } ?>
+                            <?php if ($user_data['level'] != "Member" && $konsul['status'] == "0") { ?>
+                                <div class="form-group">
+                                    <a href="<?= base_url('close/' . $konsul['url_hash']) ?>" onclick="return confirm('Tutup Percakapan?')" type="button" class="btn btn-danger btn-block">
+                                        TUTUP KONSULTASI (UPDATE STATUS CLOSE)
+                                    </a>
+                                </div>
+                            <?php } ?>
                         </form>
                         <?php if (isset($error_message)) { ?>
                             <div class="form-group">

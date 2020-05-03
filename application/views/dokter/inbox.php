@@ -30,15 +30,15 @@
                         <th scope="col">BUKA PESAN</th>
                     </tr>
                     <tr class="bg-danger no-result">
-                        <td colspan="6"><i class="fas fa-warning"></i> No result</td>
+                        <td colspan="7"><i class="fas fa-warning"></i> No result</td>
                     </tr>
                 </thead>
                 <tbody>
-
                     <?php if ($list_data) : foreach ($list_data as $p) {
                             $sql = "SELECT * FROM account WHERE id_akun = '" . $p['id_konsul'] . "'";
                             $query = $this->db->query($sql);
-                            foreach ($query->result() as $row) { ?>
+                            $row = $query->result()[0];
+                            ?>
                                 <tr>
                                     <td scope="row"><?= $p["idk"] ?></td>
                                     <td><?= $row->nama_lengkap ?></th>
@@ -56,8 +56,9 @@
                                     <td><?= $p["created"] ?></td>
                                     <td><a href="<?= base_url('pesan/'.$p["url_hash"]) ?>">Baca Pesan</a></td>
                                 </tr>
-                    <?php }
-                        } else : echo '<td colspan="6"><i class="fas fa-warning"></i> No result</td>';
+                    <?php
+                    }
+                        else : echo '<td colspan="7"><i class="fas fa-warning"></i> No result</td>';
                     endif; ?>
                 </tbody>
             </table>

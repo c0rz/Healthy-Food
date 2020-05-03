@@ -29,6 +29,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <a href="javascript:void(0);" id="lparent" class="list-group-item list-group-item-action bg-light" data-toggle="collapse" data-target="#layanan" aria-expanded="true" aria-controls="layanan">Layanan <?= $list_config['title'] ?> <i class="fas fa-angle-down text-left"></i></a>
         <div class="collapse" id="layanan" aria-labelledby="lparent" data-parent="#sidebar-wrapper">
         <?php if ($user_data['level'] ==  "Member") { ?>
+          <a href="<?= base_url('inbox') ?>" class="list-group-item list-group-item-action bg-light"><i class="fas fa-mail-bulk"></i> Lihat Semua Konsutasi</a>
           <a href="<?= base_url('konsultasi') ?>" class="list-group-item list-group-item-action bg-light"><i class="far fa-question-circle"></i> Konsultasi/Bertanya</a>
         <?php } ?>
           <a href="<?= base_url('blog') ?>" class="list-group-item list-group-item-action bg-light"><i class="fas fa-blog"></i> Blog</a>
@@ -38,7 +39,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <div class="collapse" id="adminm" aria-labelledby="lparent" data-parent="#sidebar-wrapper">
             <a href="<?= base_url('lihat_user') ?>" class="list-group-item list-group-item-action bg-light"><i class="fas fa-users"></i> Lihat Semua User</a>
             <a href="<?= base_url('daftar_dokter') ?>" class="list-group-item list-group-item-action bg-light"><i class="fas fa-user-nurse"></i> Daftar Dokter</a>
-            <a href="<?= base_url('verif_post') ?>" class="list-group-item list-group-item-action bg-light"><i class="fas fa-mail-bulk"></i> Verifikasi Post</a>
+            <a href="<?= base_url('verif_post') ?>" class="list-group-item list-group-item-action bg-light"><i class="fas fa-blog"></i> Verifikasi Post</a>
+            <a href="<?= base_url('inbox') ?>" class="list-group-item list-group-item-action bg-light"><i class="fas fa-mail-bulk"></i> Konsutasi</a>
           </div>
         <?php } ?>
         <?php if ($user_data['level'] ==  "Dokter") { ?>

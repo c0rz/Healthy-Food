@@ -26,16 +26,26 @@ class Dokter extends CI_Controller
         else :
             $session = $this->session->userdata('credentials');
             $data["user_data"] = $session;
-            if ($session["level"] ==  "Dokter") {
-                $cons['conditions'] = array(
-                    'id_dokter' => $session["id_akun"]
-                );
-                $data["list_data"] = $this->konsul->getData($cons);
+            if ($session["level"] !=  "Admin") {
+                if ($session["level"] ==  "Dokter") {
+                    $cons['conditions'] = array(
+                        'id_dokter' => $session["id_akun"]
+                    );
+                    $data["list_data"] = $this->konsul->getData($cons);
+                } else {
+                    $cons['conditions'] = array(
+                        'id_konsul' => $session["id_akun"]
+                    );
+                    $data["list_data"] = $this->konsul->getData($cons);
+                }
                 $this->load->view('template/header', $data);
                 $this->load->view('dokter/inbox', $data);
                 $this->load->view('template/footer', $data);
             } else {
-                $this->load->view('template/error', $data);
+                $data["list_data"] = $this->konsul->getData();
+                $this->load->view('template/header', $data);
+                $this->load->view('dokter/inbox', $data);
+                $this->load->view('template/footer', $data);
             }
         endif;
     }

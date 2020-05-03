@@ -65,6 +65,7 @@ $route['profile'] = 'users/update/';
 $route['pesan/(:any)'] = 'konsultasi/view/$1';
 $route['konsultasi'] = 'konsultasi/member/';
 $route['send/(:any)'] = 'konsultasi/kirim/$1';
+$route['close/(:any)'] = 'konsultasi/update/$1';
 
 // ADMIN ROUTES
 $route['lihat_user'] = 'admin/lihat_user/';

@@ -20,7 +20,7 @@ class Users extends CI_Controller
 		else :
 			$data['demo_berita'] = $this->berita->getData();
 			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, 'https://api.kawalcorona.com/');
+			curl_setopt($ch, CURLOPT_URL, 'https://api.kawalcorona.com/indonesia/');
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 			$headers = array();
@@ -28,9 +28,9 @@ class Users extends CI_Controller
 			$headers[] = 'Cache-Control: max-age=0';
 			$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.115';
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			$result = json_decode(curl_exec($ch))[36];
-			$data['corona_indonesia'] = $result->attributes;
-			// var_dump($result->attributes);
+			$result = json_decode(curl_exec($ch));
+			$data['corona_indonesia'] = $result;
+			// var_dump($result->positif);
 			// exit();
 			$data['user_data'] = $this->session->userdata('credentials');
 			$cons['conditions'] = array(
