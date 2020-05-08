@@ -20,13 +20,11 @@ class Users extends CI_Controller
 		else :
 			$data['demo_berita'] = $this->berita->getData();
 			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, 'https://api.kawalcorona.com/indonesia/');
+			curl_setopt($ch, CURLOPT_URL, 'https://covid19.mathdro.id/api/countries/INDONESIA');
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 			$headers = array();
-			$headers[] = 'Authority: api.kawalcorona.com';
-			$headers[] = 'Cache-Control: max-age=0';
-			$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36 OPR/66.0.3515.115';
+			$headers[] = 'Authority: covid19.mathdro.id';
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			$result = json_decode(curl_exec($ch));
 			$data['corona_indonesia'] = $result;
@@ -43,7 +41,6 @@ class Users extends CI_Controller
 			$this->load->view('template/footer.php', $data);
 		endif;
 	}
-
 	public function update()
 	{
 		$this->load->helper('form');
